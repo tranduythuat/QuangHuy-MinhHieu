@@ -1,0 +1,106 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.invitation {
+    width: 100%;
+    .content {
+        font-family: $font-gotham;
+        .logo {
+            perspective: 500px;
+            img {
+                max-width: 100px;
+                margin: 18% 0 16%;
+            }
+        }
+        
+        .subtext {
+            line-height: 1.8;
+            margin-bottom: 10%;
+        }
+        .names {
+            .name {
+                font-family: $font-MTD-Portrait;
+                font-size: 35px;
+                color: $title-color;
+                line-height: 2.2;
+            }
+            .role {
+                margin: 4% 0 2%;
+            }
+        }
+        .divider img {
+            max-width: 80px;
+            margin: 16% 0;
+        }
+        .date {
+            font-family: $font-gothamBold;
+            font-size: 33px;
+            margin-bottom: 7%;
+        }
+        .at-label {
+
+        }
+        .location-name {
+            font-family: $font-MTD-Portrait;
+            font-size: 45px;
+            color: $title-color;
+            line-height: 1.8;
+        }
+
+        .address {
+            font-style: italic;
+            font-size: 10px;
+            margin-bottom: 2%;
+        }
+
+        .map-btn {
+            font-family: $font-SVN-Gilroy-Bold;
+            text-decoration: none;
+            display: block;
+            width: 50%;
+            padding: 1% 0 1.6%;
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            font-size: 12px;
+            border-radius: 15px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: $active-color;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo img {
+                max-width: calc((100 / 500) * 100vw);
+            }
+           
+            .names {
+                .name {
+                    font-size: calc((35 / 500) * 100vw);
+                }
+            }
+            .divider img {
+                max-width: calc((80 / 500) * 100vw);
+            }
+            .date {
+                font-size: calc((33 / 500) * 100vw);
+            }
+           
+            .location-name {
+                font-size: calc((45 / 500) * 100vw);
+            }
+    
+            .address {
+                font-size: calc((10 / 500) * 100vw);
+            }
+    
+            .map-btn {
+                font-size: calc((12 / 500) * 100vw);
+                border-radius: calc((15 / 500) * 100vw);
+            }
+        }
+    }
+}

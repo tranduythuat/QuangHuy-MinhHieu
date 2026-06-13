@@ -1,0 +1,73 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.dresscode {
+    width: 100%;
+    .content {
+        width: 100%;
+        perspective: 1000px;
+        // background: url('../../assets/images/base_bg.png') no-repeat center / cover;
+        padding-bottom: 17%;
+        color: $title-color;
+
+        h2 {
+            font-family: $font-MTD-Portrait;
+            font-size: 45px;
+            font-weight: 300;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        .subtext {
+            text-transform: uppercase;
+            font-family: $font-gotham;
+            line-height: 1.8;
+            color: $text-color;
+            margin-bottom: 10%;
+            .bold {
+                font-family: $font-gothamBold;
+            }
+        }
+
+        .palette {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+
+            .swatch {
+                max-width: 38px;
+                aspect-ratio: 1;
+                width: 100%;
+                border-radius: 50%;
+                border: 1px solid rgba(0, 0, 0, 0.192);
+                margin: 0 -4px;
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            h2 {
+                font-size: calc((45 / 500) * 100vw);
+            }
+
+            // .subtext {
+            //     font-size: calc((12 / 500) * 100vw);
+            // }
+
+            .palette {
+                .swatch {
+                    max-width: calc((38 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}

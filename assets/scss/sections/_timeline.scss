@@ -1,0 +1,140 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.timeline {
+    width: 100%;
+    .content {
+        width: 100%;
+        background: url('../../assets/images/timeline_bg.png') no-repeat center / 85%;
+        aspect-ratio: 500 / 694;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        font-family: $font-gotham;
+
+        .title {
+            font-family: $font-MTD-Portrait;
+            font-size: 45px;
+            line-height: 2;
+            margin-top: 20%;
+            color: $title-color;
+        }
+
+        .timeline-items {
+            width: 100%;
+            margin: 8% 0 15%;
+            font-size: 12.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .timeline-row {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 2%;
+                margin-bottom: 6%;
+                .icon {
+                    img {
+                        max-width: 34px;
+                    }
+                }
+                .desc {
+                    @include flex-center;
+                    text-transform: uppercase;
+                    .bold {
+                        font-family: $font-gothamBold;
+                    }
+                }
+                &:nth-of-type(1) {
+                    .icon img {
+                        max-width: 27px;
+                    }
+                } 
+                &:nth-of-type(3) {
+                    .icon img {
+                        max-width: 15px;
+                    }
+                } 
+                &:nth-of-type(4) {
+                    .icon img {
+                        max-width: 23px;
+                    }
+                } 
+                &:nth-of-type(5) {
+                    .icon img {
+                        max-width: 24px;
+                    }
+                } 
+                &:nth-of-type(6) {
+                    .icon img {
+                        max-width: 24px;
+                    }
+                } 
+            }
+
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .title {
+                font-size: calc((45 / 500) * 100vw);
+            }
+
+            .timeline-items {
+                font-size: calc((12.5 / 500) * 100vw);
+                .timeline-row {
+                    .icon {
+                        img {
+                            max-width: calc((34 / 500) * 100vw);
+                        }
+                    }
+                    &:nth-of-type(1) {
+                        .icon img {
+                            max-width: calc((27 / 500) * 100vw);
+                        }
+                    } 
+                    &:nth-of-type(3) {
+                        .icon img {
+                            max-width: calc((15 / 500) * 100vw);
+                        }
+                    } 
+                    &:nth-of-type(4) {
+                        .icon img {
+                            max-width: calc((23 / 500) * 100vw);
+                        }
+                    } 
+                    &:nth-of-type(5) {
+                        .icon img {
+                            max-width: calc((24 / 500) * 100vw);
+                        }
+                    } 
+                    &:nth-of-type(6) {
+                        .icon img {
+                            max-width: calc((24 / 500) * 100vw);
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+.art-couple {
+    width: 100%;
+    .content {
+        width: 100%;
+        padding: 10% 0;
+        img {
+            max-width: 300px;
+        }
+        @media (max-width: 500px) {
+            img {
+                max-width: calc((300 / 500) * 100vw);
+            }
+        }
+    }
+}

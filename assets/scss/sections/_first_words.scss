@@ -1,0 +1,57 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.first-words {
+    width: 100%;
+    .content {
+        width: 100%;
+        aspect-ratio: 500 / 714;
+        background: url('../../assets/images/first_words_bg.png') no-repeat center / 92%;
+        position: relative;
+        padding-top: 15%;
+        .title {
+            color: $title-color;
+            font-family: $font-MTD-Portrait;
+            font-size: 40px;
+            line-height: 2.2;
+        }
+        .logo img {
+            max-width: 80px;
+            margin: 6% 0 7%;
+        }
+
+        .desc {
+            padding: 0 15%;
+            font-family: $font-gotham;
+            letter-spacing: .8px;
+            p {
+                line-height: 2.4;
+                margin-bottom: 5%;
+            }
+        }
+
+        .starfish {
+            max-width: 60px;
+            position: absolute;
+            bottom: 10%;
+            right: 15%;
+        }
+
+        @media (max-width: 500px) {
+            .title {
+                font-size: calc((40 / 500) * 100vw);
+            }
+            .logo img {
+                max-width: calc((80 / 500) * 100vw);
+            }
+
+            .desc {
+                letter-spacing: calc((.8 / 500) * 100vw);
+            }
+
+            .starfish {
+                max-width: calc((60 / 500) * 100vw);
+            }
+        }
+    }
+}

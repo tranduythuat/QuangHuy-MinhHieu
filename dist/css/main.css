@@ -1,0 +1,1023 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "SVN-GothamBook";
+  src: url("../../assets/fonts/SVN-GothamBook.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-GothamBold";
+  src: url("../../assets/fonts/SVN-GothamBold.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-GothamLight";
+  src: url("../../assets/fonts/SVN-GothamLight.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-GothamLightItalic";
+  src: url("../../assets/fonts/SVN-GothamLightItalic.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamLightItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-Gilroy-Bold";
+  src: url("../../assets/fonts/SVN-Gilroy-Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-Gilroy-Xlight";
+  src: url("../../assets/fonts/SVN-Gilroy-Xlight.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PinyonScript";
+  src: url("../../assets/fonts/PinyonScript-Regular.woff2") format("woff2"), url("../../assets/fonts/PinyonScript-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UVNKeChuyen3";
+  src: url("../../assets/fonts/UVNKeChuyen3.woff2") format("woff2"), url("../../assets/fonts/UVNKeChuyen3.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HLTJaneAusten";
+  src: url("../../assets/fonts/HLTJaneAusten-NoSecret.woff2") format("woff2"), url("../../assets/fonts/HLTJaneAusten-NoSecret.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UVNBUCTHU";
+  src: url("../../assets/fonts/UVNBUCTHU.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "1FTV-VIP-Qerginas";
+  src: url("../../assets/fonts/1FTV-VIP-Qerginas-Frenchstyle-Serif.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bellamy-Stevenson";
+  src: url("../../assets/fonts/Bellamy-Stevenson.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MTD-Portrait";
+  src: url("../../assets/fonts/MTD-Portrait-Script-Bounce.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ICIELBCOLDSTYLE";
+  src: url("../../assets/fonts/ICIELBCOLDSTYLE-REGULAR.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-size: 9.11px;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  max-width: 500px;
+  height: auto;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.281);
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/base_bg.webp") no-repeat center/100%;
+  color: #231f20;
+  display: none;
+  opacity: 0;
+}
+
+/* music */
+.music-box {
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  right: 1%;
+  z-index: 10000;
+  cursor: pointer;
+  isolation: isolate;
+}
+.music-box .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-origin: right center;
+  position: absolute;
+  right: 30%;
+  z-index: 1;
+  max-width: 320px;
+  width: 200%;
+  height: 100%;
+  overflow: hidden;
+}
+.music-box .label .musicLabel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+  font-size: 11px;
+  background-color: #fbf8f2;
+  color: #393934;
+  padding: 4% 15%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border: 1px solid #c0ad87;
+  opacity: 0.9;
+}
+.music-box .player {
+  max-width: 50px;
+  width: 100%;
+  aspect-ratio: 1;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.music-box .player #iconSvg {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 1.822vw;
+  }
+  .music-box {
+    bottom: 2vw;
+  }
+  .music-box .label {
+    max-width: 60vw;
+  }
+  .music-box .label .musicLabel {
+    font-size: 2.2vw;
+  }
+  .music-box .player {
+    max-width: 10vw;
+  }
+}
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+/* Định nghĩa hoạt ảnh xoay */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c9818e;
+  color: white;
+  padding: 1rem;
+}
+
+.image-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+.image-wrapper img {
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+[data-animate=flip], [data-animate=flip-yoyo] {
+  transform-origin: left center;
+  transform: rotateY(-120deg) scale(0.9);
+  opacity: 0;
+  filter: brightness(0.6);
+  backface-visibility: hidden;
+  transition: none;
+}
+
+[data-animate=flip].active, [data-animate=flip-yoyo].active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  border-radius: 12px;
+}
+
+.red {
+  background: #e74c3c;
+}
+
+.blue {
+  background: #3498db;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.shake-text {
+  animation: shakeWithPause 3s ease-in-out infinite;
+}
+
+@keyframes shakeWithPause {
+  /* Rung lắc nhẹ - kéo dài hơn */
+  0%, 100% {
+    transform: translateX(0);
+  }
+  3% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  6% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  9% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  12% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  15% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  18% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  21% {
+    transform: translateX(-2px) rotate(-0.5deg);
+  }
+  24% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+  27% {
+    transform: translateX(-2px) rotate(-0.5deg);
+  }
+  30% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+  33% {
+    transform: translateX(-1px) rotate(-0.3deg);
+  }
+  36% {
+    transform: translateX(1px) rotate(0.3deg);
+  }
+  39% {
+    transform: translateX(-1px) rotate(-0.3deg);
+  }
+  42% {
+    transform: translateX(0) rotate(0deg);
+  }
+  /* Nghỉ một đoạn */
+  42%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+.hero {
+  width: 100%;
+}
+.hero .content {
+  aspect-ratio: 500/730;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+  font-weight: 300;
+  background-color: #c9818e;
+}
+.hero .content .welcome {
+  font-family: "SVN-GothamLight", sans-serif;
+  margin-bottom: 2%;
+}
+.hero .content .couple-name {
+  font-size: 38px;
+  font-family: "PinyonScript", sans-serif;
+}
+.hero .content .photo-frame {
+  margin: 4% 0;
+}
+.hero .content .photo-frame img {
+  max-width: 237px;
+}
+.hero .content .forever {
+  font-size: 24px;
+  font-family: "PinyonScript", sans-serif;
+}
+@media (max-width: 500px) {
+  .hero .content .divider {
+    max-width: 14.8vw;
+  }
+  .hero .content .couple-name {
+    font-size: 7.6vw;
+  }
+  .hero .content .photo-frame img {
+    max-width: 47.4vw;
+  }
+  .hero .content .forever {
+    font-size: 4.8vw;
+  }
+}
+
+.first-words {
+  width: 100%;
+}
+.first-words .content {
+  width: 100%;
+  aspect-ratio: 500/714;
+  background: url("../../assets/images/first_words_bg.png") no-repeat center/92%;
+  position: relative;
+  padding-top: 15%;
+}
+.first-words .content .title {
+  color: #c9818e;
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 40px;
+  line-height: 2.2;
+}
+.first-words .content .logo img {
+  max-width: 80px;
+  margin: 6% 0 7%;
+}
+.first-words .content .desc {
+  padding: 0 15%;
+  font-family: "SVN-GothamBook", sans-serif;
+  letter-spacing: 0.8px;
+}
+.first-words .content .desc p {
+  line-height: 2.4;
+  margin-bottom: 5%;
+}
+.first-words .content .starfish {
+  max-width: 60px;
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+}
+@media (max-width: 500px) {
+  .first-words .content .title {
+    font-size: 8vw;
+  }
+  .first-words .content .logo img {
+    max-width: 16vw;
+  }
+  .first-words .content .desc {
+    letter-spacing: 0.16vw;
+  }
+  .first-words .content .starfish {
+    max-width: 12vw;
+  }
+}
+
+.invitation {
+  width: 100%;
+}
+.invitation .content {
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.invitation .content .logo {
+  perspective: 500px;
+}
+.invitation .content .logo img {
+  max-width: 100px;
+  margin: 18% 0 16%;
+}
+.invitation .content .subtext {
+  line-height: 1.8;
+  margin-bottom: 10%;
+}
+.invitation .content .names .name {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 35px;
+  color: #c9818e;
+  line-height: 2.2;
+}
+.invitation .content .names .role {
+  margin: 4% 0 2%;
+}
+.invitation .content .divider img {
+  max-width: 80px;
+  margin: 16% 0;
+}
+.invitation .content .date {
+  font-family: "SVN-gothamBold", sans-serif;
+  font-size: 33px;
+  margin-bottom: 7%;
+}
+.invitation .content .location-name {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 45px;
+  color: #c9818e;
+  line-height: 1.8;
+}
+.invitation .content .address {
+  font-style: italic;
+  font-size: 10px;
+  margin-bottom: 2%;
+}
+.invitation .content .map-btn {
+  font-family: "SVN-Gilroy-Bold", sans-serif;
+  text-decoration: none;
+  display: block;
+  width: 50%;
+  padding: 1% 0 1.6%;
+  background-color: #c9818e;
+  color: white;
+  border: none;
+  font-size: 12px;
+  border-radius: 15px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.invitation .content .map-btn:hover {
+  background-color: #c9818e;
+}
+@media (max-width: 500px) {
+  .invitation .content .logo img {
+    max-width: 20vw;
+  }
+  .invitation .content .names .name {
+    font-size: 7vw;
+  }
+  .invitation .content .divider img {
+    max-width: 16vw;
+  }
+  .invitation .content .date {
+    font-size: 6.6vw;
+  }
+  .invitation .content .location-name {
+    font-size: 9vw;
+  }
+  .invitation .content .address {
+    font-size: 2vw;
+  }
+  .invitation .content .map-btn {
+    font-size: 2.4vw;
+    border-radius: 3vw;
+  }
+}
+
+.timeline {
+  width: 100%;
+}
+.timeline .content {
+  width: 100%;
+  background: url("../../assets/images/timeline_bg.png") no-repeat center/85%;
+  aspect-ratio: 500/694;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.timeline .content .title {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 45px;
+  line-height: 2;
+  margin-top: 20%;
+  color: #c9818e;
+}
+.timeline .content .timeline-items {
+  width: 100%;
+  margin: 8% 0 15%;
+  font-size: 12.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.timeline .content .timeline-items .timeline-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-bottom: 6%;
+}
+.timeline .content .timeline-items .timeline-row .icon img {
+  max-width: 34px;
+}
+.timeline .content .timeline-items .timeline-row .desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.timeline .content .timeline-items .timeline-row .desc .bold {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.timeline .content .timeline-items .timeline-row:nth-of-type(1) .icon img {
+  max-width: 27px;
+}
+.timeline .content .timeline-items .timeline-row:nth-of-type(3) .icon img {
+  max-width: 15px;
+}
+.timeline .content .timeline-items .timeline-row:nth-of-type(4) .icon img {
+  max-width: 23px;
+}
+.timeline .content .timeline-items .timeline-row:nth-of-type(5) .icon img {
+  max-width: 24px;
+}
+.timeline .content .timeline-items .timeline-row:nth-of-type(6) .icon img {
+  max-width: 24px;
+}
+@media (max-width: 500px) {
+  .timeline .content .title {
+    font-size: 9vw;
+  }
+  .timeline .content .timeline-items {
+    font-size: 2.5vw;
+  }
+  .timeline .content .timeline-items .timeline-row .icon img {
+    max-width: 6.8vw;
+  }
+  .timeline .content .timeline-items .timeline-row:nth-of-type(1) .icon img {
+    max-width: 5.4vw;
+  }
+  .timeline .content .timeline-items .timeline-row:nth-of-type(3) .icon img {
+    max-width: 3vw;
+  }
+  .timeline .content .timeline-items .timeline-row:nth-of-type(4) .icon img {
+    max-width: 4.6vw;
+  }
+  .timeline .content .timeline-items .timeline-row:nth-of-type(5) .icon img {
+    max-width: 4.8vw;
+  }
+  .timeline .content .timeline-items .timeline-row:nth-of-type(6) .icon img {
+    max-width: 4.8vw;
+  }
+}
+
+.art-couple {
+  width: 100%;
+}
+.art-couple .content {
+  width: 100%;
+  padding: 10% 0;
+}
+.art-couple .content img {
+  max-width: 300px;
+}
+@media (max-width: 500px) {
+  .art-couple .content img {
+    max-width: 60vw;
+  }
+}
+
+.dresscode {
+  width: 100%;
+}
+.dresscode .content {
+  width: 100%;
+  perspective: 1000px;
+  padding-bottom: 17%;
+  color: #c9818e;
+}
+.dresscode .content h2 {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.dresscode .content .subtext {
+  text-transform: uppercase;
+  font-family: "SVN-GothamBook", sans-serif;
+  line-height: 1.8;
+  color: #231f20;
+  margin-bottom: 10%;
+}
+.dresscode .content .subtext .bold {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.dresscode .content .palette {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.dresscode .content .palette .swatch {
+  max-width: 38px;
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.192);
+  margin: 0 -4px;
+}
+.dresscode .content .palette .swatch:first-child {
+  margin-left: 0;
+}
+.dresscode .content .palette .swatch:last-child {
+  margin-right: 0;
+}
+@media (max-width: 500px) {
+  .dresscode .content h2 {
+    font-size: 9vw;
+  }
+  .dresscode .content .palette .swatch {
+    max-width: 7.6vw;
+  }
+}
+
+.album {
+  width: 100%;
+}
+.album .content {
+  width: 100%;
+}
+.album .content h2 {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  color: #c9818e;
+  margin: 5% 0 7%;
+}
+.album .content .swiper {
+  width: 100%;
+  aspect-ratio: 500/730;
+  margin: 0 auto;
+}
+.album .content .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.album .content .swiper .swiper-button-next,
+.album .content .swiper .swiper-button-prev {
+  color: white;
+}
+.album .content .swiper .swiper-pagination-bullet-active {
+  background: rgb(215, 215, 215);
+}
+.album .content .swiper .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+@media (max-width: 500px) {
+  .album .content h2 {
+    font-size: 11.2vw;
+  }
+  .album .content .swiper .swiper-button-next:after,
+  .album .content .swiper .swiper-button-prev:after {
+    font-size: 9.2vw;
+  }
+  .album .content .swiper .swiper-pagination-bullet {
+    width: 3.2vw;
+    height: 3.2vw;
+  }
+}
+
+.swiper {
+  margin: 0 auto;
+}
+
+.rsvp {
+  width: 100%;
+}
+.rsvp .content {
+  width: 100%;
+  aspect-ratio: 500/720;
+  perspective: 1000px;
+  position: relative;
+  font-family: "SVN-GothamBook", sans-serif;
+  color: #231f20;
+  padding-top: 12%;
+  padding-bottom: 10%;
+}
+.rsvp .content .divider {
+  margin: 5%;
+}
+.rsvp .content .divider img {
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+}
+.rsvp .content .rsvp-form {
+  display: block;
+  padding: 0 8%;
+}
+.rsvp .content .rsvp-form .header .title {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  margin-bottom: 5%;
+  color: #c9818e;
+}
+.rsvp .content .rsvp-form .header .subtitle {
+  font-family: "SVN-GothamBook", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .header .subtitle .strong {
+  font-family: "SVN-gothamBold", sans-serif;
+}
+.rsvp .content .rsvp-form .button-group {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8%;
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper, .rsvp .content .rsvp-form .button-group .checkbox-wrapper {
+  position: relative;
+  height: 32px;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio],
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.rsvp .content .rsvp-form .button-group .checkbox-wrapper input[type=checkbox]:checked + .radio-label {
+  background-color: #c9818e;
+  color: #fff;
+  border-color: none;
+}
+.rsvp .content .rsvp-form .button-group .radio-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-family: inherit;
+  height: 100%;
+  border-radius: 8px;
+  background: #f4e4e9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: none;
+}
+.rsvp .content .rsvp-form .button-group .radio-label:hover {
+  background: #c9818e;
+  color: white;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio]:checked + .radio-label {
+  background: #c9818e;
+  color: white;
+}
+.rsvp .content .rsvp-form .form-group {
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .form-group input[type=text],
+.rsvp .content .rsvp-form .form-group input[type=number],
+.rsvp .content .rsvp-form .form-group textarea {
+  font-family: inherit;
+  color: #393934;
+  width: 100%;
+  padding: 2% 4%;
+  border-radius: 8px;
+  background: #f4e4e9;
+  font-size: inherit;
+  outline: none;
+  border: none;
+  line-height: 1;
+  transition: border-color 0.3s ease;
+}
+.rsvp .content .rsvp-form .form-group input[type=text]:focus,
+.rsvp .content .rsvp-form .form-group input[type=number]:focus,
+.rsvp .content .rsvp-form .form-group textarea:focus {
+  outline: none;
+}
+.rsvp .content .rsvp-form .form-group textarea#message {
+  aspect-ratio: 5/1;
+  resize: vertical;
+  font-family: inherit;
+  padding: 2% 4%;
+  border-radius: 15px;
+}
+.rsvp .content .rsvp-form .form-group textarea::placeholder {
+  white-space: pre-line;
+  text-transform: uppercase;
+  /* Cho phép hiển thị xuống dòng trong placeholder */
+}
+.rsvp .content .rsvp-form .form-group .guest-info-title {
+  font-size: 16px;
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .form-group .subtitle {
+  text-transform: uppercase;
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .form-group .form-select {
+  font-family: inherit;
+  width: 100%;
+  padding: 2% 3%;
+  border-radius: 8px;
+  background: #f4e4e9;
+  font-size: 13px;
+  color: #393934;
+  outline: none;
+  border: none;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+.rsvp .content .rsvp-form .form-group .wish-label {
+  font-size: 16px;
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .form-group.guest-number {
+  display: flex;
+  gap: 2%;
+}
+.rsvp .content .rsvp-form .form-group.guest-number .label {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  text-transform: uppercase;
+}
+.rsvp .content .rsvp-form .checkbox-wrapper input[type=checkbox] {
+  display: none;
+}
+.rsvp .content .rsvp-form .form-group.confirm,
+.rsvp .content .rsvp-form .form-group.gender {
+  margin-bottom: 3%;
+}
+.rsvp .content .rsvp-form .form-group.location-group {
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+  opacity: 1;
+  overflow: hidden;
+}
+.rsvp .content .rsvp-form .form-group.location-group.hidden {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  pointer-events: none;
+}
+.rsvp .content .rsvp-form .form-group.related {
+  margin-top: 8%;
+}
+.rsvp .content .rsvp-form .form-group.guest-gender {
+  margin-bottom: 6%;
+}
+.rsvp .content .rsvp-form .submit-btn {
+  font-family: "SVN-gothamBold", sans-serif;
+  width: 30%;
+  padding: 2.5%;
+  line-height: 1;
+  background: #c9818e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 300;
+  font-size: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  margin: 5% 0 10%;
+}
+.rsvp .content .rsvp-form .submit-btn:hover {
+  background: rgb(41, 51, 36);
+  opacity: 0.9;
+}
+.rsvp .content .rsvp-form .submit-btn:active {
+  transform: scale(0.98);
+}
+.rsvp label {
+  display: block;
+  margin-bottom: 2%;
+  font-size: 11.11px;
+}
+.rsvp .text-size-10 {
+  font-size: 11.11px;
+}
+.rsvp .text-size-8 {
+  font-size: 10px;
+}
+@media (max-width: 500px) {
+  .rsvp .content .rsvp-form .header .title {
+    font-size: 9vw;
+  }
+  .rsvp .content .rsvp-form .divider img {
+    max-width: 20vw;
+  }
+  .rsvp .content .rsvp-form .button-group .radio-wrapper {
+    height: 6.4vw;
+  }
+  .rsvp .content .rsvp-form .form-group .guest-info-title {
+    font-size: 3.4vw;
+  }
+  .rsvp .content .rsvp-form .form-group .wish-label {
+    font-size: 3.2vw;
+  }
+  .rsvp .content .rsvp-form .form-group.dietary p.subtitle {
+    font-size: 3.2vw;
+  }
+}
+
+.end {
+  width: 100%;
+}
+.end .content {
+  width: 100%;
+  aspect-ratio: 500/936;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/end_bg.webp") no-repeat center/cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  font-family: "SVN-GothamBook", sans-serif;
+  color: white;
+}
+.end .content .logo img {
+  max-width: 100px;
+  margin-top: 20%;
+}
+.end .content .text-main {
+  line-height: 1.3;
+  margin-top: 4%;
+  text-align-last: center;
+  text-align: justify;
+  line-height: 2.5;
+}
+@media (max-width: 500px) {
+  .end .content .logo img {
+    max-width: 20vw;
+  }
+}
+
+.letter-section {
+  width: 100%;
+  max-width: 500px;
+}
+.letter-section .content {
+  width: 100%;
+  aspect-ratio: 500/891;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/letter.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  color: #564e47;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.439);
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  padding-bottom: 15%;
+}
+.letter-section .content .subtext {
+  font-family: "HLTJaneAusten", sans-serif;
+  font-size: 21px;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .letter-section .content .subtext {
+    font-size: 4.2vw;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
