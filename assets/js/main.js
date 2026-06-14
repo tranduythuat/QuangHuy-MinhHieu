@@ -149,11 +149,11 @@
     openCard.addEventListener("click", () => {
       markCardOpened();
 
-      // if (audio && audio.paused) {
-      //   audio.play().catch(err => {
-      //     console.log("Autoplay blocked:", err);
-      //   });
-      // }
+      if (audio && audio.paused) {
+        audio.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      }
       tl.play();
     });
   }
@@ -729,7 +729,7 @@
     initPage();
     initLetterAnimation();
     initAnimations();
-    // initMusic();
+    initMusic();
     initDresscodeAnimation();
     // initTimeline();
     initSwiper();

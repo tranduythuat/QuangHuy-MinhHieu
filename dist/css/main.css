@@ -376,7 +376,7 @@ header {
   aspect-ratio: 500/714;
   background: url("../../assets/images/first_words_bg.png") no-repeat center/92%;
   position: relative;
-  padding-top: 15%;
+  padding-top: 20%;
 }
 .first-words .content .title {
   color: #c9818e;
@@ -389,11 +389,12 @@ header {
   margin: 6% 0 7%;
 }
 .first-words .content .desc {
-  padding: 0 15%;
+  padding: 0 14%;
   font-family: "SVN-GothamBook", sans-serif;
   letter-spacing: 0.8px;
 }
 .first-words .content .desc p {
+  text-transform: uppercase;
   line-height: 2.4;
   margin-bottom: 5%;
 }
