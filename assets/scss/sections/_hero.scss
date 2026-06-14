@@ -4,37 +4,40 @@
 .hero {
     width: 100%;
     .content {
-        aspect-ratio: 500 / 730;
-        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/DSCF4591.webp') no-repeat center / cover;
+        aspect-ratio: 500 / 835;
+        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/41.webp') no-repeat 86% 100% / cover;
         position: relative;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         flex-direction: column;
         align-items: center;
         perspective: 1000px;
         font-weight: 300;
-        background-color: $primary-color;
+        color: $secondary-color;
 
-        .welcome {
-            font-family: $font-gothamLight;
-            margin-bottom: 2%;
-        }
-
-        .couple-name {
-            font-size: 38px;
-            font-family: $font-PinyonScript;
-        }
-        .photo-frame {
-            margin: 4% 0;
-            img {
-                max-width: 237px;
+        .names {
+            margin-top: 5%;
+            font-family: $font-MTD-Portrait;
+            font-size: 40px;
+            .name {
+                line-height: 2;
+                padding: 0 20px;
+            }
+            .role {
+                margin: 1% 0;
+                line-height: 1.4;
             }
         }
-            
-        .forever{
-            font-size: 24px;
-            font-family: $font-PinyonScript;
+
+        .savethedate{
+            font-size: 13px;
+            margin-top: 5%;
+        }
+
+        &.vow {
+            aspect-ratio: 500 / 1447;
+            background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/hero_bg.png') no-repeat center / cover;
         }
     }
 
@@ -44,17 +47,15 @@
                 max-width: calc((74 / 500) * 100vw);
             }
     
-            .couple-name {
-                font-size: calc((38 / 500) * 100vw);
-            }
-            .photo-frame {
-                img {
-                    max-width: calc((237 / 500) * 100vw);
+            .names {
+                font-size: calc((40 / 500) * 100vw);
+                .name {
+                    padding: 0 calc((20 / 500) * 100vw);;
                 }
             }
-                
-            .forever{
-                font-size: calc((24 / 500) * 100vw);
+    
+            .savethedate{
+                font-size: calc((13 / 500) * 100vw);
             }
         }
     }

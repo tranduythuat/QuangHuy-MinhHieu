@@ -325,48 +325,51 @@ header {
   width: 100%;
 }
 .hero .content {
-  aspect-ratio: 500/730;
-  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/DSCF4591.webp") no-repeat center/cover;
+  aspect-ratio: 500/835;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/41.webp") no-repeat 86% 100%/cover;
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
   align-items: center;
   perspective: 1000px;
   font-weight: 300;
-  background-color: #c9818e;
+  color: #f1ece8;
 }
-.hero .content .welcome {
-  font-family: "SVN-GothamLight", sans-serif;
-  margin-bottom: 2%;
+.hero .content .names {
+  margin-top: 5%;
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 40px;
 }
-.hero .content .couple-name {
-  font-size: 38px;
-  font-family: "PinyonScript", sans-serif;
+.hero .content .names .name {
+  line-height: 2;
+  padding: 0 20px;
 }
-.hero .content .photo-frame {
-  margin: 4% 0;
+.hero .content .names .role {
+  margin: 1% 0;
+  line-height: 1.4;
 }
-.hero .content .photo-frame img {
-  max-width: 237px;
+.hero .content .savethedate {
+  font-size: 13px;
+  margin-top: 5%;
 }
-.hero .content .forever {
-  font-size: 24px;
-  font-family: "PinyonScript", sans-serif;
+.hero .content.vow {
+  aspect-ratio: 500/1447;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/hero_bg.png") no-repeat center/cover;
 }
 @media (max-width: 500px) {
   .hero .content .divider {
     max-width: 14.8vw;
   }
-  .hero .content .couple-name {
-    font-size: 7.6vw;
+  .hero .content .names {
+    font-size: 8vw;
   }
-  .hero .content .photo-frame img {
-    max-width: 47.4vw;
+  .hero .content .names .name {
+    padding: 0 4vw;
   }
-  .hero .content .forever {
-    font-size: 4.8vw;
+  .hero .content .savethedate {
+    font-size: 2.6vw;
   }
 }
 
