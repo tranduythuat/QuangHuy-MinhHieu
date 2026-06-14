@@ -326,6 +326,8 @@ header {
 }
 .hero .content {
   aspect-ratio: 500/730;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/QuangHuy-MinhHieu/DSCF4591.webp") no-repeat center/cover;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -571,6 +573,15 @@ header {
 }
 .timeline .content .timeline-items .timeline-row:nth-of-type(6) .icon img {
   max-width: 24px;
+}
+.timeline .content.not-vows .title {
+  margin-top: 25%;
+}
+.timeline .content.not-vows .timeline-items {
+  margin: 15% 0;
+}
+.timeline .content.not-vows .timeline-row {
+  margin-bottom: 10%;
 }
 @media (max-width: 500px) {
   .timeline .content .title {
@@ -977,10 +988,12 @@ header {
 }
 .end .content .text-main {
   line-height: 1.3;
-  margin-top: 4%;
+  margin-top: 8%;
   text-align-last: center;
   text-align: justify;
   line-height: 2.5;
+  text-transform: uppercase;
+  padding: 0 13%;
 }
 @media (max-width: 500px) {
   .end .content .logo img {

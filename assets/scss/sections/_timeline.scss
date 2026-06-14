@@ -20,6 +20,7 @@
             line-height: 2;
             margin-top: 20%;
             color: $title-color;
+            
         }
 
         .timeline-items {
@@ -75,6 +76,18 @@
                 } 
             }
 
+        }
+
+        &.not-vows {
+            .title {
+                margin-top: 25%;
+            }
+            .timeline-items { 
+                margin: 15% 0;
+            }
+            .timeline-row {
+                margin-bottom: 10%;
+            }
         }
     }
 
