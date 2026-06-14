@@ -521,7 +521,7 @@
   /* ======================================================
        RSVP
     ====================================================== */
-  async function handleFormSubmit(e, lang = "vi") {
+  async function handleFormSubmit(e, timeline = "vow", lang="vi") {
     e.preventDefault();
 
     const form = e.target;
@@ -533,30 +533,16 @@
       confirm,
       guest_number,
       related,
+      vegetarian,
+      wish,
     } = data;
 
-    if (confirm === "Yes") {
-      const selectedLocations = document.querySelectorAll('input[name="location"]:checked');
-      if (selectedLocations.length === 0) {
-        let errorMsg = document.getElementById("location-error");
-        if (!errorMsg) {
-          errorMsg = document.createElement("p");
-          errorMsg.id = "location-error";
-          errorMsg.style.cssText = "color: red; font-size: 13px; margin-top: 8px; text-align: center;";
-          document.getElementById("location-group").appendChild(errorMsg);
-        }
-        errorMsg.textContent = "Quý khách vui lòng chọn ít nhất 1 địa điểm tham dự";
-        setTimeout(() => (errorMsg.textContent = ""), 3000);
-        return;
-      }
-    }
-
     // Lấy danh sách địa điểm đã chọn
-    const locations = confirm === "Yes"
-    ? [...document.querySelectorAll('input[name="location"]:checked')]
-        .map((cb) => cb.value)
-        .join(", ")
-    : "";
+    // const locations = confirm === "Yes"
+    // ? [...document.querySelectorAll('input[name="location"]:checked')]
+    //     .map((cb) => cb.value)
+    //     .join(", ")
+    // : "";
 
     // =========================
     // i18n Messages
@@ -597,7 +583,12 @@
       didOpen: () => Swal.showLoading(),
     });
 
-    const sheetURL = "https://script.google.com/macros/s/AKfycbxBYsxxG8E1gPZP15Gz9kBdp4B-ER2EFt0gcXmJ1k7W8g9s3ai7nXiQOwCOYl1ZtQYB/exec?sheet=confirm";
+    const SHEET_ENDPOINTS = {
+      vow: "https://script.google.com/macros/s/AKfycbyw7oTOA0TQjzhKRWdoMd_BUGyIruwSnPXCH_WmYxr9GOTXQ2OEEaPXkHJeb_vOfBJ0/exec?sheet=vows",
+      not_vow: "https://script.google.com/macros/s/AKfycbyw7oTOA0TQjzhKRWdoMd_BUGyIruwSnPXCH_WmYxr9GOTXQ2OEEaPXkHJeb_vOfBJ0/exec?sheet=not-vows",
+    };
+
+    let sheetURL = SHEET_ENDPOINTS[timeline] || SHEET_ENDPOINTS['vow'];
 
     try {
       const res = await fetch(sheetURL, {
@@ -606,9 +597,10 @@
         body: new URLSearchParams({
           name,
           confirm,
-          locations,
           guest_number,
           related,
+          vegetarian,
+          wish,
         }),
       });
 
@@ -653,25 +645,30 @@
   }
 
   function initRSVP() {
-    const confirm = document.querySelectorAll('input[name="confirm"]')
-    confirm.forEach((radio) => {
-      radio.addEventListener("change", function () {
-        const locationGroup = document.getElementById("location-group");
-        if (this.value === "Yes") {
-          locationGroup.classList.remove("hidden");
-        } else {
-          locationGroup.classList.add("hidden");
-        }
-      });
-    })
-    const defaultConfirm = document.querySelector('input[name="confirm"]:checked');
-    if (defaultConfirm && defaultConfirm.value !== "Yes") {
-      document.getElementById("location-group").classList.add("hidden");
-    }
+    // const confirm = document.querySelectorAll('input[name="confirm"]')
+    // confirm.forEach((radio) => {
+    //   radio.addEventListener("change", function () {
+    //     const locationGroup = document.getElementById("location-group");
+    //     if (this.value === "Yes") {
+    //       locationGroup.classList.remove("hidden");
+    //     } else {
+    //       locationGroup.classList.add("hidden");
+    //     }
+    //   });
+    // })
+    // const defaultConfirm = document.querySelector('input[name="confirm"]:checked');
+    // if (defaultConfirm && defaultConfirm.value !== "Yes") {
+    //   document.getElementById("location-group").classList.add("hidden");
+    // }
 
     const form = document.forms["rsvpForm"];
+    const formNotVow = document.forms["rsvpForm-notvow"];
     if (form) {
-      form.addEventListener("submit", (e) => handleFormSubmit(e, "vi"));
+      form.addEventListener("submit", (e) => handleFormSubmit(e, "vow", "vi"));
+    }
+
+    if (formNotVow) {
+      formNotVow.addEventListener("submit", (e) => handleFormSubmit(e, "not_vow", "vi"));
     }
   }
 
