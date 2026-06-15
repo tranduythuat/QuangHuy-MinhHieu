@@ -9,10 +9,17 @@
             perspective: 500px;
             img {
                 max-width: 100px;
-                margin: 18% 0 16%;
+                margin: 18% 0 14%;
             }
         }
-        
+        .parent {
+            margin-bottom: 10%;
+            text-transform: uppercase;
+            font-weight: 600;
+            p {
+                line-height: 1.8;
+            }
+        }
         .subtext {
             line-height: 1.8;
             margin-bottom: 10%;
@@ -76,7 +83,6 @@
             .logo img {
                 max-width: calc((100 / 500) * 100vw);
             }
-           
             .names {
                 .name {
                     font-size: calc((35 / 500) * 100vw);

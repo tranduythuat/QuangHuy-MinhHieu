@@ -435,7 +435,15 @@ header {
 }
 .invitation .content .logo img {
   max-width: 100px;
-  margin: 18% 0 16%;
+  margin: 18% 0 14%;
+}
+.invitation .content .parent {
+  margin-bottom: 10%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.invitation .content .parent p {
+  line-height: 1.8;
 }
 .invitation .content .subtext {
   line-height: 1.8;
@@ -1045,6 +1053,12 @@ header {
 @media (max-width: 500px) {
   .letter-section .content .subtext {
     font-size: 4.2vw;
+  }
+  .letter-section .content .invite-text {
+    font-size: 2.4vw;
+  }
+  .letter-section .content .guest-name {
+    font-size: 6.4vw;
   }
 }
 
