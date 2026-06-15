@@ -13,7 +13,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         color: #564e47ff;
@@ -22,6 +22,18 @@
         cursor: pointer;
         perspective: 1000px;
         padding-bottom: 15%;
+
+        .invite-text {
+            font-size: 12px;
+            font-family: $font-gotham;
+            text-transform: uppercase;
+            margin-bottom: 5%;
+        }
+        .guest-name {
+            font-family: $font-MTD-Portrait;
+            font-size: 32px;
+            margin-bottom: 5%;
+        }
         
         .subtext {
             font-family: $font-HLTJaneAusten;

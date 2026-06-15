@@ -1016,7 +1016,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #564e47;
@@ -1025,6 +1025,17 @@ header {
   cursor: pointer;
   perspective: 1000px;
   padding-bottom: 15%;
+}
+.letter-section .content .invite-text {
+  font-size: 12px;
+  font-family: "SVN-GothamBook", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 5%;
+}
+.letter-section .content .guest-name {
+  font-family: "MTD-Portrait", sans-serif;
+  font-size: 32px;
+  margin-bottom: 5%;
 }
 .letter-section .content .subtext {
   font-family: "HLTJaneAusten", sans-serif;

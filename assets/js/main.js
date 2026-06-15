@@ -164,8 +164,8 @@
     if (!section) return;
 
     const content = section.querySelector(".content");
-    // const logo = section.querySelector(".logo-img");
-    // const husband = section.querySelector(".husband");
+    const inviteText = section.querySelector(".invite-text");
+    const guestName = section.querySelector(".guest-name");
     // const ampersand = section.querySelector(".ampersand");
     // const wife = section.querySelector(".wife");
     // const divider = section.querySelector(".divider-img");
@@ -196,30 +196,30 @@
       }
     );
 
-    // tl.from(
-    //   logo,
-    //   {
-    //     rotateY: -180,
-    //     scale: 0.8,
-    //     opacity: 0,
-    //     duration: 1.5,
-    //     ease: "back.out(1.2)",
-    //     transformOrigin: "center center"
-    //   },
-    //   "-=0.5"
-    // );
+    tl.from(
+      inviteText,
+      {
+        rotateY: -180,
+        scale: 0.8,
+        opacity: 0,
+        duration: 1.5,
+        ease: "back.out(1.2)",
+        transformOrigin: "center center"
+      },
+      "-=0.5"
+    );
 
-    // tl.fromTo(
-    //   husband,
-    //   { opacity: 0, x: -30 },
-    //   {
-    //     opacity: 1,
-    //     x: 0,
-    //     duration: 1,
-    //     ease: "power2.out",
-    //   },
-    //   "-=1"
-    // );
+    tl.fromTo(
+      guestName,
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "-=1"
+    );
 
     // tl.fromTo(
     //   ampersand,
